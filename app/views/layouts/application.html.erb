@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MHS DA</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+	<div class="topbar">
+	<div class="fill">
+	<div class="container">
+	<h3 class="pull-left">
+	<a class="brand" href="/">MHS DA</a>
+	</h3>
+
+	<ul class="nav">
+		<li><a href="/">Home</a></li>
+		<li><a href="/about" >About</a></li>
+		<li><a href="/members">Members</a></li>
+		
+	</ul>
+
+	<% if !session[:logged_in] %>
+	
+	<%=form_tag({:controller => "login", :action => "auth"}, :class => "pull-right")%>
+	<input class="input-small" type="text" placeholder="Username" name="email">
+	<input class="input-small" type="password" placeholder="Password" name="password">
+	<button class="btn info" type="submit" value="login">Sign In</button>
+	
+	<a href="/login/register" class="btn success">Sign Up</a>
+	
+	
+	</form>
+	<%else%>
+	<p class="white pull-right">Logged in as <%=session[:username]%></p>
+	<%end%>
+	</div>
+
+	</div>
+	</div>
+
+<%= yield %>
+
+</body>
+</html>

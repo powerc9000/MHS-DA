@@ -1,0 +1,41 @@
+<div class="container">
+	<div class="content">
+	<%if flash[:form_error] %>
+	<div class="alert-message error" data-alert="true">
+		<a class="close" href="#">×</a>
+  		<p><%= flash[:form_error] %></p>
+	</div>
+	<%end%>
+	<%if @user %>
+	
+		<% @user.errors.full_messages.each do |msg| %>
+    
+  
+		<div class="alert-message error" data-alert="true">
+		<a class="close" href="#">×</a>
+  		<p> <%= msg %></p>
+  		</div>
+  		<%end%>
+  	<%end%>
+		<div class="page-header">
+		<h1>Register for the DA</h1>
+		</div>
+		<form action="/login/register" method="post" class="form-stacked">
+		<input type="hidden" value="true" name="submitted">
+		<label for="fname">First Name</label>
+		<input type="text" name="fname" id="fname">
+		<label for="lname">Last Name</label>
+		<input type="text" name="lname" id="lname">
+		<label for="username">Username</label>
+		<input type="text" name="username" id="username">
+		<label for="email">Email</label>
+		<input type="text" name="email" id="email">
+		<label for="password">Password</label>
+		<input type="password" name="password" id="password">
+		<label for="passconf">Confirm Password</label>
+		<input type="password" name="passconf" id="passconf">
+		<button type="submit" class="btn success">Register</button>
+		
+		</form>
+	</div>
+</div>
