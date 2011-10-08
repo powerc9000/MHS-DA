@@ -1,8 +1,17 @@
 class Addname < ActiveRecord::Migration
   def up
-  	add_column :users, :fname, :text
-    add_column :users, :lname, :text
-    change_column :users, :username,:text, :unique => true, :case_sensitive =>false
+  	
+    create_table :users do |t|
+      t.string  :password 
+      t.text  :fname
+      t.text  :username, :unique => true, :case_sensitive =>false
+      t.text  :lname
+      t.text  :house
+      t.text  :email, :unique => true, :case_sensitive =>false
+      t.integer  :rank
+      t.text :photo
+      
+    end
   end
 
   def down
