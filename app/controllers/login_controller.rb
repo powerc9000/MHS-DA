@@ -7,7 +7,7 @@ class LoginController < ApplicationController
   		redirect_to("/")
   	else
 	  	
-    @user = User.where(:email => params[:email])
+    @user = User.where(:email => params[:email]).first
     if @user
     if @user.password == params[:password]
       		session[:id] = @user.id
