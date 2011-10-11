@@ -13,7 +13,7 @@ class Addname < ActiveRecord::Migration
       
     end
    
-   change column :users, :username, :string, :unique => true, :case_sensitive =>false
+   change_column :users, :username, :string, :unique => true, :case_sensitive =>false
   end
 
   def down
