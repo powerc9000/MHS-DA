@@ -27,7 +27,7 @@
 	<% if !session[:logged_in] %>
 	
 	<%=form_tag({:controller => "login", :action => "auth"}, :class => "pull-right")%>
-	<input class="input-small" type="text" placeholder="Username" name="email">
+	<input class="input-small" type="text" placeholder="Email" name="email">
 	<input class="input-small" type="password" placeholder="Password" name="password">
 	<button class="btn info" type="submit" value="login">Sign In</button>
 	
