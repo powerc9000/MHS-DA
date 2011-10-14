@@ -5,6 +5,7 @@ class MembersController < ApplicationController
   		flash[:type] = "error"
   		redirect_to("/")
   	end
+  	@users = User.all
   end
 
 end
