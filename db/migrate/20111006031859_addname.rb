@@ -1,7 +1,7 @@
 class Addname < ActiveRecord::Migration
   def up
   	
-    add_table :users do |t|
+    create_table :users do |t|
       
       t.text  :fname
       t.text  :username, :string, :unique => true, :case_sensitive =>false
